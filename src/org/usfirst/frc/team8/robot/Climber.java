@@ -8,7 +8,7 @@ public class Climber extends Subsystems {
 
 	public Climber() {
 		super();
-		climber = new CANTalon(8);
+		climber = new CANTalon(9);
 	}
 
 	public void action() {
