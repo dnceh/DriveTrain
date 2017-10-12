@@ -6,12 +6,10 @@ import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 
 public class Slider extends Subsystems{
 	Potentiometer pot; 
-	CANTalon sliderTalon = new CANTalon(7); 
+	CANTalon sliderTalon = new CANTalon(10); 
 	AllJoysticks humanInterface; 
 	double sliderSpeed = 0; 
 	double fullRange = 0; 
-	double maxValue = 0; 
-	double minValue = 0; 
 	
 	public Slider(){
 		super(); 
@@ -20,18 +18,12 @@ public class Slider extends Subsystems{
 	}
 	
 	public void action(){
-		if(Math.abs(pot.get()) < fullRange){
+		if ((Math.abs(pot.get()) < fullRange) || (pot.get() >= fullRange && humanInterface.slider.getX() < 0) || (pot.get() <= -fullRange && humanInterface.slider.getX() > 0)){
 			sliderSpeed = (humanInterface.slider).getX(); 
-			sliderTalon.set(sliderSpeed);
-		}
-		else if((pot.get() > fullRange) && (sliderSpeed < 0)){
-			sliderTalon.set(sliderSpeed);
-		}
-		else if((pot.get() < fullRange) && (sliderSpeed > 0)){
-			sliderTalon.set(sliderSpeed);
 		}
 		else{
-			sliderTalon.set(0);
+			sliderSpeed = 0; 
 		}
+		sliderTalon.set(sliderSpeed);
 	}
 }
