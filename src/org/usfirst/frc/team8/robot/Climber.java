@@ -14,6 +14,7 @@ public class Climber extends Subsystems {
 
 	public void action() {
 		if ((humanInterface.climb).getY() < 0) {
+			System.out.println("Climbing");
 			climber.set(humanInterface.climb.getY());
 		}
 	}
