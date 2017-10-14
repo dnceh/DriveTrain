@@ -9,6 +9,7 @@ public class Climber extends Subsystems {
 	public Climber() {
 		super();
 		climber = new CANTalon(9);
+		humanInterface = new AllJoysticks(); 
 	}
 
 	public void action() {

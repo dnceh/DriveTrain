@@ -5,9 +5,9 @@ import edu.wpi.first.wpilibj.Joystick;
 public class AllJoysticks{
 	public Joystick driveStick, rotation, slider, climb;
 	public AllJoysticks(){
-		driveStick = new Joystick(1);
-		rotation = new Joystick(2);
+		driveStick = new Joystick(0);
+		rotation = new Joystick(1);
 		slider = new Joystick(3); 
-		climb = new Joystick(4); 
+		climb = new Joystick(2); 
 	}
 }

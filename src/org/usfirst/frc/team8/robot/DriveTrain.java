@@ -16,6 +16,7 @@ public class DriveTrain extends Subsystems{
 		right_side1 = new CANTalon(4);
 		right_side2 = new CANTalon(5);
 		right_side3 = new CANTalon(6);
+		humanInterface = new AllJoysticks(); 
 	}
 	
  

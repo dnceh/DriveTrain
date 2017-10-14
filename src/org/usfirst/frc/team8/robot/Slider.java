@@ -15,6 +15,7 @@ public class Slider extends Subsystems{
 		super(); 
 		pot = new AnalogPotentiometer(8); 
 		sliderTalon.set(0);
+		humanInterface = new AllJoysticks(); 
 	}
 	
 	public void action(){
